@@ -1,50 +1,31 @@
-# Python
+# Virtual environments
+tutorial_env/
+venv/
+env/
+.venv/
+
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
-.Python
-*.so
-*.egg
-*.egg-info/
-dist/
-build/
 
-# Virtual environments
-venv/
-env/
-ENV/
-.venv
+# Large model files
+*.pth
+*.bin
+*.safetensors
+*.pt
+*.so
+*.dylib
+
+# Jupyter
+.ipynb_checkpoints/
 
 # IDE
 .vscode/
 .idea/
-*.swp
-*.swo
 
-# Jupyter notebooks (optional - remove if you want to sync them)
-.ipynb_checkpoints/
-
-# Large data files (important!)
-*.pth
-*.safetensors
-*.bin
-*.h5
-*.parquet
-
-# Hugging Face cache
-.cache/
-.huggingface/
-
-# OS files
+# OS
 .DS_Store
-Thumbs.db
 
-# Your data folders (optional - keep structure but not huge files)
-# Remove these lines if you want to sync the actual data
-Datasets/Raw_qald_plus_datasets/*.json
-Datasets/Extracted_en_question_query/*.json
-
-# But keep the folders themselves
-!Datasets/Raw_qald_plus_datasets/.gitkeep
-!Datasets/Extracted_en_question_query/.gitkeep
+# Git submodules (keep the reference but not the content)
+llama-models/
