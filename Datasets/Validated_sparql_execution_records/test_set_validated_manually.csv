@@ -258,7 +258,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q81"",
   ""sub_error_types"": [""hallucinated entity or property""]
-}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,no,['semantic'],['hallucinated entity or property'],yes,first name and last name order reverse dont influence the result
+}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,no,['semantic'],['hallucinated entity or property'],analysis,first name and last name order reverse dont influence the result
 q73,How many gold medals did Michael Phelps win at the 2008 Olympics?,"PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT Count(?sub) as ?c WHERE { ?sub dbo:goldMedalist dbr:Michael_Phelps . filter (contains (str(?sub), ""2008"") && contains (str(?sub), ""Olympics"")) }",semantic,"
 You are an expert in SPARQL and DBpedia.
 
@@ -466,7 +466,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q6"",
   ""sub_error_types"": [""incorrect class""]
-}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,no,['semantic'],['incorrect class'],undetermined,the sparql golden query returns false
+}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,no,['semantic'],['incorrect class'],no,the sparql golden query returns false
 q56,How many seats does the home stadium of FC Porto have?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX db: <http://dbpedia.org/> SELECT ?capacity WHERE { { dbr:FC_Porto dbo:ground ?ground . ?ground dbo:capacity ?capacity } UNION { dbr:FC_Porto dbo:ground ?ground . ?ground dbp:capacity ?capacity } },semantic,"
 You are an expert in SPARQL and DBpedia.
 
@@ -518,7 +518,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q56"",
   ""sub_error_types"": [""incorrect property""]
-}",none,TRUE,1,none,TRUE,1,none,TRUE,possible_ineffective_corruption,yes,yes,yes,['semantic'],['incorrect property'],yes,"In the golden query, the useful contraint is capacitym the other one populationTotal ?capacity is not good enough, and the llm change this one into capacity, so the results is the same"
+}",none,TRUE,1,none,TRUE,1,none,TRUE,possible_ineffective_corruption,yes,yes,yes,['semantic'],['incorrect property'],analysis,"In the golden query, the useful contraint is capacitym the other one populationTotal ?capacity is not good enough, and the llm change this one into capacity, so the results is the same"
 q49,Which frequent flyer program has the most airlines?,SELECT ?uri WHERE { ?airline <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Airline> . ?airline <http://dbpedia.org/property/frequentFlyer> ?uri. } GROUP BY ?uri ORDER BY DESC(COUNT(DISTINCT ?airline)) OFFSET 0 LIMIT 1,semantic,"
 You are an expert in SPARQL and DBpedia.
 
@@ -878,7 +878,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q31"",
   ""sub_error_types"": [""incorrect property""]
-}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,no,['semantic'],['incorrect predicate'],yes,the gold query returns empty  results
+}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,no,['semantic'],['incorrect predicate'],no,the gold query returns empty  results
 q29,Which countries in the European Union adopted the Euro?,"SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Country> { ?uri <http://dbpedia.org/ontology/currency> <http://dbpedia.org/resource/Euro> } UNION { ?uri <http://dbpedia.org/property/currencyCode> ""EUR""@en } }",syntax,"
 You are an expert in SPARQL and DBpedia.
 
@@ -1600,7 +1600,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q62"",
   ""sub_error_types"": [""incorrect property""]
-}",none,TRUE,1,none,TRUE,1,none,TRUE,possible_ineffective_corruption,yes,yes,no,['semantic'],['incorrect property'],yes,"Gold query has syntax error, dbo was written into dbp, and wrong query didnt change the propety"
+}",none,TRUE,1,none,TRUE,1,none,TRUE,possible_ineffective_corruption,yes,yes,no,['semantic'],['incorrect property'],analysis,"Gold query has syntax error, dbo was written into dbp, and wrong query didnt change the propety"
 q173,When did Finland join the EU?,PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?date WHERE { res:Finland dbp:accessioneudate ?date },semantic,"
 You are an expert in SPARQL and DBpedia.
 
@@ -2064,7 +2064,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q149"",
   ""sub_error_types"": [""wrong literal or resource type""]
-}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,yes,['semantic'],['wrong literal or resource type'],undetermined,"the gold query returns empty  results, change language ;ay not influence the results"
+}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,yes,['semantic'],['wrong literal or resource type'],no,"the gold query returns empty  results, change language ;ay not influence the results"
 q25,What is the longest river in China?,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/River> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/China> ; <http://dbpedia.org/property/length> ?l } ORDER BY DESC(?l) OFFSET 0 LIMIT 1,semantic,"
 You are an expert in SPARQL and DBpedia.
 
@@ -2476,7 +2476,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q132"",
   ""sub_error_types"": [""triple flip (subject/object inversion)""]
-}",none,TRUE,0,none,TRUE,1,none,FALSE,gold_no_results_wrong_has_results,no,yes,yes,['structural'],['triple flip (subject/object inversion)'],,the gold query hasnt results that doesnt have matter with the wrong query's results
+}",none,TRUE,0,none,TRUE,1,none,FALSE,gold_no_results_wrong_has_results,no,yes,yes,['structural'],['triple flip (subject/object inversion)'],no,the gold query hasnt results that doesnt have matter with the wrong query's results
 q128,Who is the author of WikiLeaks?,PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX onto: <http://dbpedia.org/ontology/> SELECT ?uri WHERE { res:WikiLeaks onto:author ?uri },semantic,"
 You are an expert in SPARQL and DBpedia.
 
@@ -2580,7 +2580,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q126"",
   ""sub_error_types"": [""incorrect property""]
-}",none,TRUE,0,none,TRUE,1,none,FALSE,gold_no_results_wrong_has_results,no,yes,yes,['semantic'],['incorrect property'],,the gold query hasnt results that doesnt have matter with the wrong query's results
+}",none,TRUE,0,none,TRUE,1,none,FALSE,gold_no_results_wrong_has_results,no,yes,yes,['semantic'],['incorrect property'],no,the gold query hasnt results that doesnt have matter with the wrong query's results
 q125,How many years was the Ford Model T manufactured?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX res: <http://dbpedia.org/resource/> SELECT ?years WHERE { res:Ford_Model_T dbo:productionEndYear ?end ; dbo:productionStartYear ?start. BIND ( ( year(xsd:date(?end)) - year(xsd:date(?start)) ) AS ?years) },semantic,"
 You are an expert in SPARQL and DBpedia.
 
@@ -3296,7 +3296,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q183"",
   ""sub_error_types"": [""triple flip (subject/object inversion)""]
-}",none,TRUE,1,none,TRUE,1,none,TRUE,possible_ineffective_corruption,yes,yes,yes,['structural'],['triple flip (subject/object inversion)'],yes,spouse is symmetric property
+}",none,TRUE,1,none,TRUE,1,none,TRUE,possible_ineffective_corruption,yes,yes,yes,['structural'],['triple flip (subject/object inversion)'],no,spouse is symmetric property
 q181,Through which countries does the Yenisei river flow?,PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Yenisei_River <http://dbpedia.org/ontology/country> ?uri },semantic,"
 You are an expert in SPARQL and DBpedia.
 
@@ -3962,7 +3962,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q21"",
   ""sub_error_types"": [""incorrect property""]
-}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,yes,['semantic'],['incorrect property'],undetermined,"the gold query returns empty  results, autor may eqal to publisher"
+}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,yes,['semantic'],['incorrect property'],no,"the gold query returns empty  results, autor may eqal to publisher"
 q34,Give me all female German chancellors.,PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Chancellor_of_Germany dbp:incumbent ?uri },semantic,"
 You are an expert in SPARQL and DBpedia.
 
@@ -4326,7 +4326,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q96"",
   ""sub_error_types"": [""incorrect URI""]
-}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,no,['semantic'],['incorrect URI'],yes,"the gold query returns empty  results, dbr is alternative to resm they both point to http://dbpedia.org/resource/"
+}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,no,['semantic'],['incorrect URI'],analysis,"the gold query returns empty  results, dbr is alternative to resm they both point to http://dbpedia.org/resource/"
 q40,Who were the parents of Queen Victoria?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Queen_Victoria dbo:parent ?uri },semantic,"
 You are an expert in SPARQL and DBpedia.
 
@@ -4892,7 +4892,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q167"",
   ""sub_error_types"": [""incorrect property""]
-}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,yes,['semantic'],['incorrect property'],undetermined,"the gold query returns empty  results, it seems that operator more suitable for the question"
+}",none,TRUE,0,none,TRUE,0,none,TRUE,possible_ineffective_corruption,yes,yes,yes,['semantic'],['incorrect property'],no,"the gold query returns empty  results, it seems that operator more suitable for the question"
 q131,What languages are spoken in Pakistan?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Pakistan> <http://dbpedia.org/ontology/language> ?uri },semantic,"
 You are an expert in SPARQL and DBpedia.
 
@@ -5560,7 +5560,7 @@ Output format:
 }",yes,none,"{
   ""id"": ""q165"",
   ""sub_error_types"": [""incorrect property""]
-}",none,TRUE,0,none,TRUE,2,none,FALSE,gold_no_results_wrong_has_results,no,yes,yes,['semantic'],['incorrect property'],,the gold query hasnt results that doesnt have matter with the wrong query's results
+}",none,TRUE,0,none,TRUE,2,none,FALSE,gold_no_results_wrong_has_results,no,yes,yes,['semantic'],['incorrect property'],no,the gold query hasnt results that doesnt have matter with the wrong query's results
 q108,When did Paraguay proclaim its independence?,SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Paraguay> <http://dbpedia.org/ontology/foundingDate> ?date },semantic,"
 You are an expert in SPARQL and DBpedia.
 
