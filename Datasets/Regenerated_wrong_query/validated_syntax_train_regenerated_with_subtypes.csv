@@ -1,0 +1,1873 @@
+id,question,sparql_gold,sparql_wrong,error_types,sub_error_types,prompt,raw_json,valid_generation,issue,classification_raw_json,classification_issue,gold_exec_ok,gold_result_count,gold_error,wrong_exec_ok,wrong_result_count,wrong_error,same_results,behavior_category,manual_review_needed,manual_review_notes
+q10,What are the official languages of the Philippines?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Philippines dbo:officialLanguage ?uri },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Philippines dbo:officialLanguage ?uri },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q10"",
+  ""question"": ""What are the official languages of the Philippines?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Philippines dbo:officialLanguage ?uri }""
+}
+
+Output format:
+{
+  ""id"": ""q10"",
+  ""question"": ""What are the official languages of the Philippines?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Philippines dbo:officialLanguage ?uri }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q10"",
+  ""question"": ""What are the official languages of the Philippines?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Philippines dbo:officialLanguage ?uri }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Philippines dbo:officialLanguage ?uri }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q10"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,2,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+DISTINCT+%3Furi+WHERE+res%3APhilippines+dbo%3AofficialLanguage+%3Furi+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q12,Which movies starring Brad Pitt were directed by Guy Ritchie?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie,['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q12"",
+  ""question"": ""Which movies starring Brad Pitt were directed by Guy Ritchie?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie }""
+}
+
+Output format:
+{
+  ""id"": ""q12"",
+  ""question"": ""Which movies starring Brad Pitt were directed by Guy Ritchie?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q12"",
+  ""question"": ""Which movies starring Brad Pitt were directed by Guy Ritchie?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie "",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q12"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+SELECT+DISTINCT+%3Furi+WHERE+%7B+%3Furi+rdf%3Atype+dbo%3AFilm+%3B+dbo%3Astarring+res%3ABrad_Pitt+%3B+dbo%3Adirector+res%3AGuy_Ritchie&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q13,Give me the grandchildren of Bruce Lee.,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q13"",
+  ""question"": ""Give me the grandchildren of Bruce Lee."",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri }""
+}
+
+Output format:
+{
+  ""id"": ""q13"",
+  ""question"": ""Give me the grandchildren of Bruce Lee."",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q13"",
+  ""question"": ""Give me the grandchildren of Bruce Lee."",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q13"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+DISTINCT+%3Furi+WHERE+res%3ABruce_Lee+dbo%3Achild+%3Fchild+.+%3Fchild+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2Fchildren%3E+%3Furi+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q21,Who wrote the book The pillars of the Earth?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE res:The_Pillars_of_the_Earth dbo:author ?uri },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q21"",
+  ""question"": ""Who wrote the book The pillars of the Earth?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }""
+}
+
+Output format:
+{
+  ""id"": ""q21"",
+  ""question"": ""Who wrote the book The pillars of the Earth?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q21"",
+  ""question"": ""Who wrote the book The pillars of the Earth?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE res:The_Pillars_of_the_Earth dbo:author ?uri }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q21"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+SELECT+DISTINCT+%3Furi+WHERE+res%3AThe_Pillars_of_the_Earth+dbo%3Aauthor+%3Furi+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q39,What movies does Jesse Eisenberg play in?,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> },SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q39"",
+  ""question"": ""What movies does Jesse Eisenberg play in?"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }""
+}
+
+Output format:
+{
+  ""id"": ""q39"",
+  ""question"": ""What movies does Jesse Eisenberg play in?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q39"",
+  ""question"": ""What movies does Jesse Eisenberg play in?"",
+  ""sparql_wrong"": ""SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q39"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,40,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=SELECT+DISTINCT+%3Furi+WHERE++%3Furi+a+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FFilm%3E+%3B+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2Fstarring%3E+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FJesse_Eisenberg%3E+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q49,What is the official color of the University of Oxford?,SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string },SELECT DISTINCT ?string WHERE  <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q49"",
+  ""question"": ""What is the official color of the University of Oxford?"",
+  ""sparql_gold"": ""SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }""
+}
+
+Output format:
+{
+  ""id"": ""q49"",
+  ""question"": ""What is the official color of the University of Oxford?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q49"",
+  ""question"": ""What is the official color of the University of Oxford?"",
+  ""sparql_wrong"": ""SELECT DISTINCT ?string WHERE  <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }"",
+  ""sparql_gold"": ""SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q49"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=SELECT+DISTINCT+%3Fstring+WHERE++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FUniversity_of_Oxford%3E+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FofficialSchoolColour%3E+%3Fstring+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q53,Who are the four youngest MVP basketball players?,"SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, ""MVP"") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, ""MVP"")  ORDER BY DESC(?date) OFFSET 0 LIMIT 4",['syntax'],['incorrect clause ordering'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q53"",
+  ""question"": ""Who are the four youngest MVP basketball players?"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, ""MVP"") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4""
+}
+
+Output format:
+{
+  ""id"": ""q53"",
+  ""question"": ""Who are the four youngest MVP basketball players?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, ""MVP"") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q53"",
+  ""question"": ""Who are the four youngest MVP basketball players?"",
+  ""sparql_wrong"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, \""MVP\"")  ORDER BY DESC(?date) OFFSET 0 LIMIT 4"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, \""MVP\"") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q53"",
+  ""sub_error_types"": [""incorrect clause ordering""]
+}",none,True,4,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=SELECT+DISTINCT+%3Furi+WHERE+%7B+%3Furi+a+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FBasketballPlayer%3E+%3B+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FbirthDate%3E+%3Fdate+%3B+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2Fhighlights%3E+%3Fh+FILTER+regex%28%3Fh%2C+%22MVP%22%29++ORDER+BY+DESC%28%3Fdate%29+OFFSET+0+LIMIT+4&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q59,Give me all islands that belong to Japan.,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> },SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q59"",
+  ""question"": ""Give me all islands that belong to Japan."",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> }""
+}
+
+Output format:
+{
+  ""id"": ""q59"",
+  ""question"": ""Give me all islands that belong to Japan."",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q59"",
+  ""question"": ""Give me all islands that belong to Japan."",
+  ""sparql_wrong"": ""SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> }"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q59"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,134,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=SELECT+DISTINCT+%3Furi+WHERE++%3Furi+a+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FIsland%3E+%3B+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2Fcountry%3E+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FJapan%3E+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q64,Give me all soccer clubs in the Premier League.,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> },SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q64"",
+  ""question"": ""Give me all soccer clubs in the Premier League."",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> }""
+}
+
+Output format:
+{
+  ""id"": ""q64"",
+  ""question"": ""Give me all soccer clubs in the Premier League."",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q64"",
+  ""question"": ""Give me all soccer clubs in the Premier League."",
+  ""sparql_wrong"": ""SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> }"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q64"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=SELECT+DISTINCT+%3Furi+WHERE++%3Furi+a+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FSoccerClub%3E+%3B+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2Fleague%3E+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FPremier_League%3E+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q76,How many museums does Paris have?,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> },SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q76"",
+  ""question"": ""How many museums does Paris have?"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }""
+}
+
+Output format:
+{
+  ""id"": ""q76"",
+  ""question"": ""How many museums does Paris have?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q76"",
+  ""question"": ""How many museums does Paris have?"",
+  ""sparql_wrong"": ""SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q76"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,39,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=SELECT+DISTINCT+%3Furi+WHERE++%3Furi+a+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FMuseum%3E+%3B+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2Flocation%3E+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FParis%3E+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q161,Give me all films produced by Hal Roach.,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> },SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q161"",
+  ""question"": ""Give me all films produced by Hal Roach."",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }""
+}
+
+Output format:
+{
+  ""id"": ""q161"",
+  ""question"": ""Give me all films produced by Hal Roach."",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q161"",
+  ""question"": ""Give me all films produced by Hal Roach."",
+  ""sparql_wrong"": ""SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q161"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,538,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=SELECT+DISTINCT+%3Furi+WHERE++%3Furi+a+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FFilm%3E+%3B+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2Fproducer%3E+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FHal_Roach%3E+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q164,Give me a list of all bandleaders that play trumpet.,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Bandleader> ; <http://dbpedia.org/ontology/instrument> <http://dbpedia.org/resource/Trumpet> },SELECT DISTINCT ?uri WHERE  ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Bandleader> ; <http://dbpedia.org/ontology/instrument> <http://dbpedia.org/resource/Trumpet> },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q164"",
+  ""question"": ""Give me a list of all bandleaders that play trumpet."",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Bandleader> ; <http://dbpedia.org/ontology/instrument> <http://dbpedia.org/resource/Trumpet> }""
+}
+
+Output format:
+{
+  ""id"": ""q164"",
+  ""question"": ""Give me a list of all bandleaders that play trumpet."",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Bandleader> ; <http://dbpedia.org/ontology/instrument> <http://dbpedia.org/resource/Trumpet> }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q164"",
+  ""question"": ""Give me a list of all bandleaders that play trumpet."",
+  ""sparql_wrong"": ""SELECT DISTINCT ?uri WHERE  ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Bandleader> ; <http://dbpedia.org/ontology/instrument> <http://dbpedia.org/resource/Trumpet> }"",
+  ""sparql_gold"": ""SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Bandleader> ; <http://dbpedia.org/ontology/instrument> <http://dbpedia.org/resource/Trumpet> }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q164"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,21,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=SELECT+DISTINCT+%3Furi+WHERE++%3Furi+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2Foccupation%3E+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FBandleader%3E+%3B+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2Finstrument%3E+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTrumpet%3E+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q173,Give me all cities in New Jersey with more than 100000 inhabitants.,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City ; dbo:isPartOf res:New_Jersey ; dbo:populationTotal ?inhabitants FILTER ( ?inhabitants > 100000 ) },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE ?uri rdf:type dbo:City ; dbo:isPartOf res:New_Jersey ; dbo:populationTotal ?inhabitants FILTER ( ?inhabitants > 100000 ) },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q173"",
+  ""question"": ""Give me all cities in New Jersey with more than 100000 inhabitants."",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City ; dbo:isPartOf res:New_Jersey ; dbo:populationTotal ?inhabitants FILTER ( ?inhabitants > 100000 ) }""
+}
+
+Output format:
+{
+  ""id"": ""q173"",
+  ""question"": ""Give me all cities in New Jersey with more than 100000 inhabitants."",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City ; dbo:isPartOf res:New_Jersey ; dbo:populationTotal ?inhabitants FILTER ( ?inhabitants > 100000 ) }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q173"",
+  ""question"": ""Give me all cities in New Jersey with more than 100000 inhabitants."",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE ?uri rdf:type dbo:City ; dbo:isPartOf res:New_Jersey ; dbo:populationTotal ?inhabitants FILTER ( ?inhabitants > 100000 ) }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City ; dbo:isPartOf res:New_Jersey ; dbo:populationTotal ?inhabitants FILTER ( ?inhabitants > 100000 ) }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q173"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,0,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+PREFIX+dbp%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+SELECT+DISTINCT+%3Furi+WHERE+%3Furi+rdf%3Atype+dbo%3ACity+%3B+dbo%3AisPartOf+res%3ANew_Jersey+%3B+dbo%3ApopulationTotal+%3Finhabitants+FILTER+%28+%3Finhabitants+%3E+100000+%29+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q214,Are tree frogs a type of amphibian?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Hylidae dbo:class res:Amphibian },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE res:Hylidae dbo:class res:Amphibian },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q214"",
+  ""question"": ""Are tree frogs a type of amphibian?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Hylidae dbo:class res:Amphibian }""
+}
+
+Output format:
+{
+  ""id"": ""q214"",
+  ""question"": ""Are tree frogs a type of amphibian?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Hylidae dbo:class res:Amphibian }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q214"",
+  ""question"": ""Are tree frogs a type of amphibian?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE res:Hylidae dbo:class res:Amphibian }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Hylidae dbo:class res:Amphibian }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q214"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,0,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+ASK+WHERE+res%3AHylidae+dbo%3Aclass+res%3AAmphibian+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q215,What is the location of the Houses of Parliament?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE { res:Palace_of_Westminster dbo:location ?uri },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE res:Palace_of_Westminster dbo:location ?uri },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q215"",
+  ""question"": ""What is the location of the Houses of Parliament?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE { res:Palace_of_Westminster dbo:location ?uri }""
+}
+
+Output format:
+{
+  ""id"": ""q215"",
+  ""question"": ""What is the location of the Houses of Parliament?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE { res:Palace_of_Westminster dbo:location ?uri }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q215"",
+  ""question"": ""What is the location of the Houses of Parliament?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE res:Palace_of_Westminster dbo:location ?uri }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE { res:Palace_of_Westminster dbo:location ?uri }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q215"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,0,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+%3Furi+WHERE+res%3APalace_of_Westminster+dbo%3Alocation+%3Furi+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q229,Who is 8th president of US?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?name WHERE { dbr:8th_President_of_the_United_States dbo:wikiPageRedirects ?link . ?link dbp:name ?name },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?name WHERE dbr:8th_President_of_the_United_States dbo:wikiPageRedirects ?link . ?link dbp:name ?name },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q229"",
+  ""question"": ""Who is 8th president of US?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?name WHERE { dbr:8th_President_of_the_United_States dbo:wikiPageRedirects ?link . ?link dbp:name ?name }""
+}
+
+Output format:
+{
+  ""id"": ""q229"",
+  ""question"": ""Who is 8th president of US?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?name WHERE { dbr:8th_President_of_the_United_States dbo:wikiPageRedirects ?link . ?link dbp:name ?name }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q229"",
+  ""question"": ""Who is 8th president of US?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?name WHERE dbr:8th_President_of_the_United_States dbo:wikiPageRedirects ?link . ?link dbp:name ?name }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?name WHERE { dbr:8th_President_of_the_United_States dbo:wikiPageRedirects ?link . ?link dbp:name ?name }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q229"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+dbp%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E+PREFIX+dbr%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+%3Fname+WHERE+dbr%3A8th_President_of_the_United_States+dbo%3AwikiPageRedirects+%3Flink+.+%3Flink+dbp%3Aname+%3Fname+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q230,how much is the total population of european union?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?europop WHERE { dbr:European_Union dbo:populationTotal ?europop },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?europop WHERE dbr:European_Union dbo:populationTotal ?europop },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q230"",
+  ""question"": ""how much is the total population of european union?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?europop WHERE { dbr:European_Union dbo:populationTotal ?europop }""
+}
+
+Output format:
+{
+  ""id"": ""q230"",
+  ""question"": ""how much is the total population of european union?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?europop WHERE { dbr:European_Union dbo:populationTotal ?europop }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q230"",
+  ""question"": ""how much is the total population of european union?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?europop WHERE dbr:European_Union dbo:populationTotal ?europop }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?europop WHERE { dbr:European_Union dbo:populationTotal ?europop }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q230"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+dbr%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+%3Feuropop+WHERE+dbr%3AEuropean_Union+dbo%3ApopulationTotal+%3Feuropop+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q234,What is the population of Cairo?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?pop WHERE { dbr:Cairo dbo:populationTotal ?pop },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?pop WHERE dbr:Cairo dbo:populationTotal ?pop },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q234"",
+  ""question"": ""What is the population of Cairo?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?pop WHERE { dbr:Cairo dbo:populationTotal ?pop }""
+}
+
+Output format:
+{
+  ""id"": ""q234"",
+  ""question"": ""What is the population of Cairo?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?pop WHERE { dbr:Cairo dbo:populationTotal ?pop }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q234"",
+  ""question"": ""What is the population of Cairo?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?pop WHERE dbr:Cairo dbo:populationTotal ?pop }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?pop WHERE { dbr:Cairo dbo:populationTotal ?pop }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q234"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+dbr%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+%3Fpop+WHERE+dbr%3ACairo+dbo%3ApopulationTotal+%3Fpop+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q235,Is Frank Herbert still alive?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { OPTIONAL { res:Frank_Herbert dbo:deathDate ?date } FILTER ( ! bound(?date) ) },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { OPTIONAL { res:Frank_Herbert dbo:deathDate ?date  FILTER ( ! bound(?date) ) },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q235"",
+  ""question"": ""Is Frank Herbert still alive?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { OPTIONAL { res:Frank_Herbert dbo:deathDate ?date } FILTER ( ! bound(?date) ) }""
+}
+
+Output format:
+{
+  ""id"": ""q235"",
+  ""question"": ""Is Frank Herbert still alive?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { OPTIONAL { res:Frank_Herbert dbo:deathDate ?date } FILTER ( ! bound(?date) ) }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q235"",
+  ""question"": ""Is Frank Herbert still alive?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { OPTIONAL { res:Frank_Herbert dbo:deathDate ?date  FILTER ( ! bound(?date) ) }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { OPTIONAL { res:Frank_Herbert dbo:deathDate ?date } FILTER ( ! bound(?date) ) }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q235"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,0,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+ASK+WHERE+%7B+OPTIONAL+%7B+res%3AFrank_Herbert+dbo%3AdeathDate+%3Fdate++FILTER+%28+%21+bound%28%3Fdate%29+%29+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q244,How often did Jane Fonda marry?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Jane_Fonda dbo:spouse ?uri },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c WHERE { res:Jane_Fonda dbo:spouse ?uri },['syntax'],['missing parentheses'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q244"",
+  ""question"": ""How often did Jane Fonda marry?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Jane_Fonda dbo:spouse ?uri }""
+}
+
+Output format:
+{
+  ""id"": ""q244"",
+  ""question"": ""How often did Jane Fonda marry?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Jane_Fonda dbo:spouse ?uri }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q244"",
+  ""question"": ""How often did Jane Fonda marry?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c WHERE { res:Jane_Fonda dbo:spouse ?uri }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Jane_Fonda dbo:spouse ?uri }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q244"",
+  ""sub_error_types"": [""missing parentheses""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+%28COUNT%28DISTINCT+%3Furi%29+AS+%3Fc+WHERE+%7B+res%3AJane_Fonda+dbo%3Aspouse+%3Furi+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q248,Which university did Angela Merkel attend?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?university WHERE { res:Angela_Merkel dbo:almaMater ?university },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?university WHERE res:Angela_Merkel dbo:almaMater ?university },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q248"",
+  ""question"": ""Which university did Angela Merkel attend?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?university WHERE { res:Angela_Merkel dbo:almaMater ?university }""
+}
+
+Output format:
+{
+  ""id"": ""q248"",
+  ""question"": ""Which university did Angela Merkel attend?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?university WHERE { res:Angela_Merkel dbo:almaMater ?university }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q248"",
+  ""question"": ""Which university did Angela Merkel attend?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?university WHERE res:Angela_Merkel dbo:almaMater ?university }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?university WHERE { res:Angela_Merkel dbo:almaMater ?university }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q248"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,2,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+DISTINCT+%3Funiversity+WHERE+res%3AAngela_Merkel+dbo%3AalmaMater+%3Funiversity+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q278,how big is the total area of North Rhine- Westphalia?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?tarea WHERE { dbr:North_Rhine-Westphalia dbo:areaTotal ?tarea },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?tarea WHERE dbr:North_Rhine-Westphalia dbo:areaTotal ?tarea },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q278"",
+  ""question"": ""how big is the total area of North Rhine- Westphalia?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?tarea WHERE { dbr:North_Rhine-Westphalia dbo:areaTotal ?tarea }""
+}
+
+Output format:
+{
+  ""id"": ""q278"",
+  ""question"": ""how big is the total area of North Rhine- Westphalia?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?tarea WHERE { dbr:North_Rhine-Westphalia dbo:areaTotal ?tarea }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q278"",
+  ""question"": ""how big is the total area of North Rhine- Westphalia?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?tarea WHERE dbr:North_Rhine-Westphalia dbo:areaTotal ?tarea }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?tarea WHERE { dbr:North_Rhine-Westphalia dbo:areaTotal ?tarea }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q278"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+dbr%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+%3Ftarea+WHERE+dbr%3ANorth_Rhine-Westphalia+dbo%3AareaTotal+%3Ftarea+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q287,How tall is Claudia Schiffer?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE { res:Claudia_Schiffer dbo:height ?height },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE res:Claudia_Schiffer dbo:height ?height },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q287"",
+  ""question"": ""How tall is Claudia Schiffer?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE { res:Claudia_Schiffer dbo:height ?height }""
+}
+
+Output format:
+{
+  ""id"": ""q287"",
+  ""question"": ""How tall is Claudia Schiffer?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE { res:Claudia_Schiffer dbo:height ?height }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q287"",
+  ""question"": ""How tall is Claudia Schiffer?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE res:Claudia_Schiffer dbo:height ?height }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE { res:Claudia_Schiffer dbo:height ?height }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q287"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+DISTINCT+%3Fheight+WHERE+res%3AClaudia_Schiffer+dbo%3Aheight+%3Fheight+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q288,how much is the population densty rank of germany?,PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?rank WHERE { dbr:Germany dbp:populationDensityRank ?rank },PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?rank WHERE dbr:Germany dbp:populationDensityRank ?rank },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q288"",
+  ""question"": ""how much is the population densty rank of germany?"",
+  ""sparql_gold"": ""PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?rank WHERE { dbr:Germany dbp:populationDensityRank ?rank }""
+}
+
+Output format:
+{
+  ""id"": ""q288"",
+  ""question"": ""how much is the population densty rank of germany?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?rank WHERE { dbr:Germany dbp:populationDensityRank ?rank }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q288"",
+  ""question"": ""how much is the population densty rank of germany?"",
+  ""sparql_wrong"": ""PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?rank WHERE dbr:Germany dbp:populationDensityRank ?rank }"",
+  ""sparql_gold"": ""PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?rank WHERE { dbr:Germany dbp:populationDensityRank ?rank }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q288"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbr%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+PREFIX+dbp%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E+SELECT+%3Frank+WHERE+dbr%3AGermany+dbp%3ApopulationDensityRank+%3Frank+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q290,List all games by GMT.,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:publisher res:GMT_Games },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE ?uri dbo:publisher res:GMT_Games },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q290"",
+  ""question"": ""List all games by GMT."",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }""
+}
+
+Output format:
+{
+  ""id"": ""q290"",
+  ""question"": ""List all games by GMT."",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q290"",
+  ""question"": ""List all games by GMT."",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE ?uri dbo:publisher res:GMT_Games }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q290"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,11,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+DISTINCT+%3Furi+WHERE+%3Furi+dbo%3Apublisher+res%3AGMT_Games+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q304,How high is the Yokohama Marine Tower?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Yokohama_Marine_Tower dbo:height ?num },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE res:Yokohama_Marine_Tower dbo:height ?num },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q304"",
+  ""question"": ""How high is the Yokohama Marine Tower?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Yokohama_Marine_Tower dbo:height ?num }""
+}
+
+Output format:
+{
+  ""id"": ""q304"",
+  ""question"": ""How high is the Yokohama Marine Tower?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Yokohama_Marine_Tower dbo:height ?num }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q304"",
+  ""question"": ""How high is the Yokohama Marine Tower?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE res:Yokohama_Marine_Tower dbo:height ?num }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Yokohama_Marine_Tower dbo:height ?num }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q304"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+DISTINCT+%3Fnum+WHERE+res%3AYokohama_Marine_Tower+dbo%3Aheight+%3Fnum+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q312,What country is Sitecore from?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Sitecore dbo:foundationPlace ?uri },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Sitecore dbo:foundationPlace ?uri },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q312"",
+  ""question"": ""What country is Sitecore from?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Sitecore dbo:foundationPlace ?uri }""
+}
+
+Output format:
+{
+  ""id"": ""q312"",
+  ""question"": ""What country is Sitecore from?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Sitecore dbo:foundationPlace ?uri }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q312"",
+  ""question"": ""What country is Sitecore from?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Sitecore dbo:foundationPlace ?uri }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Sitecore dbo:foundationPlace ?uri }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q312"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,0,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+DISTINCT+%3Furi+WHERE+res%3ASitecore+dbo%3AfoundationPlace+%3Furi+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q330,Who composed the music for Harold and Maude?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Harold_and_Maude dbo:musicComposer ?uri },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Harold_and_Maude dbo:musicComposer ?uri },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q330"",
+  ""question"": ""Who composed the music for Harold and Maude?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Harold_and_Maude dbo:musicComposer ?uri }""
+}
+
+Output format:
+{
+  ""id"": ""q330"",
+  ""question"": ""Who composed the music for Harold and Maude?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Harold_and_Maude dbo:musicComposer ?uri }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q330"",
+  ""question"": ""Who composed the music for Harold and Maude?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Harold_and_Maude dbo:musicComposer ?uri }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Harold_and_Maude dbo:musicComposer ?uri }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q330"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,0,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+DISTINCT+%3Furi+WHERE+res%3AHarold_and_Maude+dbo%3AmusicComposer+%3Furi+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q347,Show me all books in Asimov's Foundation series.,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:Foundation_series },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE ?uri dbo:series res:Foundation_series },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q347"",
+  ""question"": ""Show me all books in Asimov's Foundation series."",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:Foundation_series }""
+}
+
+Output format:
+{
+  ""id"": ""q347"",
+  ""question"": ""Show me all books in Asimov's Foundation series."",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:Foundation_series }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q347"",
+  ""question"": ""Show me all books in Asimov's Foundation series."",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE ?uri dbo:series res:Foundation_series }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:Foundation_series }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q347"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,0,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+DISTINCT+%3Furi+WHERE+%3Furi+dbo%3Aseries+res%3AFoundation_series+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q361,Did Socrates influence Aristotle?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Aristotle dbo:influencedBy res:Socrates },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE res:Aristotle dbo:influencedBy res:Socrates },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q361"",
+  ""question"": ""Did Socrates influence Aristotle?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Aristotle dbo:influencedBy res:Socrates }""
+}
+
+Output format:
+{
+  ""id"": ""q361"",
+  ""question"": ""Did Socrates influence Aristotle?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Aristotle dbo:influencedBy res:Socrates }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q361"",
+  ""question"": ""Did Socrates influence Aristotle?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE res:Aristotle dbo:influencedBy res:Socrates }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Aristotle dbo:influencedBy res:Socrates }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q361"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,0,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+ASK+WHERE+res%3AAristotle+dbo%3AinfluencedBy+res%3ASocrates+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q366,In which city does the Chile Route 68 end?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Chile_Route_68 dbo:routeEnd ?uri },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Chile_Route_68 dbo:routeEnd ?uri },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q366"",
+  ""question"": ""In which city does the Chile Route 68 end?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Chile_Route_68 dbo:routeEnd ?uri }""
+}
+
+Output format:
+{
+  ""id"": ""q366"",
+  ""question"": ""In which city does the Chile Route 68 end?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Chile_Route_68 dbo:routeEnd ?uri }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q366"",
+  ""question"": ""In which city does the Chile Route 68 end?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Chile_Route_68 dbo:routeEnd ?uri }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Chile_Route_68 dbo:routeEnd ?uri }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q366"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+DISTINCT+%3Furi+WHERE+res%3AChile_Route_68+dbo%3ArouteEnd+%3Furi+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q378,Which books by Kerouac were published by Viking Press?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:publisher res:Viking_Press ; dbo:author res:Jack_Kerouac },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE ?uri rdf:type dbo:Book ; dbo:publisher res:Viking_Press ; dbo:author res:Jack_Kerouac },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q378"",
+  ""question"": ""Which books by Kerouac were published by Viking Press?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:publisher res:Viking_Press ; dbo:author res:Jack_Kerouac }""
+}
+
+Output format:
+{
+  ""id"": ""q378"",
+  ""question"": ""Which books by Kerouac were published by Viking Press?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:publisher res:Viking_Press ; dbo:author res:Jack_Kerouac }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q378"",
+  ""question"": ""Which books by Kerouac were published by Viking Press?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE ?uri rdf:type dbo:Book ; dbo:publisher res:Viking_Press ; dbo:author res:Jack_Kerouac }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:publisher res:Viking_Press ; dbo:author res:Jack_Kerouac }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q378"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,3,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+SELECT+DISTINCT+%3Furi+WHERE+%3Furi+rdf%3Atype+dbo%3ABook+%3B+dbo%3Apublisher+res%3AViking_Press+%3B+dbo%3Aauthor+res%3AJack_Kerouac+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q390,In which films did Julia Roberts as well as Richard Gere play?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Julia_Roberts ; dbo:starring res:Richard_Gere },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Julia_Roberts ; dbo:starring res:Richard_Gere,['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q390"",
+  ""question"": ""In which films did Julia Roberts as well as Richard Gere play?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Julia_Roberts ; dbo:starring res:Richard_Gere }""
+}
+
+Output format:
+{
+  ""id"": ""q390"",
+  ""question"": ""In which films did Julia Roberts as well as Richard Gere play?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Julia_Roberts ; dbo:starring res:Richard_Gere }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q390"",
+  ""question"": ""In which films did Julia Roberts as well as Richard Gere play?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Julia_Roberts ; dbo:starring res:Richard_Gere "",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Julia_Roberts ; dbo:starring res:Richard_Gere }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q390"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,2,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+SELECT+DISTINCT+%3Furi+WHERE+%7B+%3Furi+rdf%3Atype+dbo%3AFilm+%3B+dbo%3Astarring+res%3AJulia_Roberts+%3B+dbo%3Astarring+res%3ARichard_Gere&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q396,Who is the founder of Penguin Books?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Penguin_Books dbo:founder ?uri },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE res:Penguin_Books dbo:founder ?uri },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q396"",
+  ""question"": ""Who is the founder of Penguin Books?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Penguin_Books dbo:founder ?uri }""
+}
+
+Output format:
+{
+  ""id"": ""q396"",
+  ""question"": ""Who is the founder of Penguin Books?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Penguin_Books dbo:founder ?uri }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q396"",
+  ""question"": ""Who is the founder of Penguin Books?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE res:Penguin_Books dbo:founder ?uri }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Penguin_Books dbo:founder ?uri }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q396"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,0,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+SELECT+DISTINCT+%3Furi+WHERE+res%3APenguin_Books+dbo%3Afounder+%3Furi+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q397,Who wrote the Game of Thrones theme?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Game_of_Thrones dbo:composer ?uri },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Game_of_Thrones dbo:composer ?uri },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q397"",
+  ""question"": ""Who wrote the Game of Thrones theme?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Game_of_Thrones dbo:composer ?uri }""
+}
+
+Output format:
+{
+  ""id"": ""q397"",
+  ""question"": ""Who wrote the Game of Thrones theme?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Game_of_Thrones dbo:composer ?uri }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q397"",
+  ""question"": ""Who wrote the Game of Thrones theme?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Game_of_Thrones dbo:composer ?uri }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Game_of_Thrones dbo:composer ?uri }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q397"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+SELECT+DISTINCT+%3Furi+WHERE+res%3AGame_of_Thrones+dbo%3Acomposer+%3Furi+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,
+q404,In which city are the headquarters of the United Nations?,PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Headquarters_of_the_United_Nations dbo:location ?uri . ?uri rdf:type dbo:City },PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE res:Headquarters_of_the_United_Nations dbo:location ?uri . ?uri rdf:type dbo:City },['syntax'],['missing or mismatched braces'],"
+You are an expert in SPARQL and DBpedia.
+
+Your task is to generate ONE intentionally incorrect SPARQL query from a correct golden SPARQL query.
+
+Syntactic errors are violations of SPARQL grammar rules that prevent the query from being parsed correctly.
+
+Examples of syntactic errors include:
+- missing or mismatched braces
+- missing parentheses
+- malformed SELECT clause
+- incorrect WHERE placement
+- malformed PREFIX declaration
+- incorrect clause ordering
+- undeclared variable
+- general SPARQL grammar violations
+
+Rules:
+- Introduce EXACTLY ONE syntactic error
+- Do NOT introduce semantic errors
+- Do NOT introduce structural errors
+- Keep the query as close as possible to the original
+- MUST derive from gold query with minimal modification
+- MUST NOT be identical to gold query
+- Return ONLY valid JSON
+- Do NOT include explanations or comments
+
+Input:
+{
+  ""id"": ""q404"",
+  ""question"": ""In which city are the headquarters of the United Nations?"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Headquarters_of_the_United_Nations dbo:location ?uri . ?uri rdf:type dbo:City }""
+}
+
+Output format:
+{
+  ""id"": ""q404"",
+  ""question"": ""In which city are the headquarters of the United Nations?"",
+  ""sparql_wrong"": ""<generated incorrect SPARQL query>"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Headquarters_of_the_United_Nations dbo:location ?uri . ?uri rdf:type dbo:City }"",
+  ""error_types"": [""syntax""]
+}
+","{
+  ""id"": ""q404"",
+  ""question"": ""In which city are the headquarters of the United Nations?"",
+  ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE res:Headquarters_of_the_United_Nations dbo:location ?uri . ?uri rdf:type dbo:City }"",
+  ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Headquarters_of_the_United_Nations dbo:location ?uri . ?uri rdf:type dbo:City }"",
+  ""error_types"": [""syntax""]
+}",yes,none,"{
+  ""id"": ""q404"",
+  ""sub_error_types"": [""missing or mismatched braces""]
+}",none,True,1,none,False,0,http_error: 400 Client Error: Bad Request for url: https://dbpedia.org/sparql?query=PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E+PREFIX+res%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+SELECT+DISTINCT+%3Furi+WHERE+res%3AHeadquarters_of_the_United_Nations+dbo%3Alocation+%3Furi+.+%3Furi+rdf%3Atype+dbo%3ACity+%7D&format=application%2Fsparql-results%2Bjson,False,wrong_execution_failed,yes,

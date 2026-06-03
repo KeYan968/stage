@@ -1,0 +1,434 @@
+[
+  {
+    "id": "q10",
+    "question": "What are the official languages of the Philippines?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Philippines dbo:officialLanguage ?uri }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Philippines dbo:officialLanguage ?uri }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q12",
+    "question": "Which movies starring Brad Pitt were directed by Guy Ritchie?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q13",
+    "question": "Give me the grandchildren of Bruce Lee.",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q21",
+    "question": "Who wrote the book The pillars of the Earth?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE res:The_Pillars_of_the_Earth dbo:author ?uri }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q39",
+    "question": "What movies does Jesse Eisenberg play in?",
+    "sparql_wrong": "SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }",
+    "sparql_gold": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q49",
+    "question": "What is the official color of the University of Oxford?",
+    "sparql_wrong": "SELECT DISTINCT ?string WHERE  <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }",
+    "sparql_gold": "SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q53",
+    "question": "Who are the four youngest MVP basketball players?",
+    "sparql_wrong": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, \"MVP\")  ORDER BY DESC(?date) OFFSET 0 LIMIT 4",
+    "sparql_gold": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, \"MVP\") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "incorrect clause ordering"
+    ]
+  },
+  {
+    "id": "q59",
+    "question": "Give me all islands that belong to Japan.",
+    "sparql_wrong": "SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> }",
+    "sparql_gold": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q64",
+    "question": "Give me all soccer clubs in the Premier League.",
+    "sparql_wrong": "SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> }",
+    "sparql_gold": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q76",
+    "question": "How many museums does Paris have?",
+    "sparql_wrong": "SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }",
+    "sparql_gold": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q161",
+    "question": "Give me all films produced by Hal Roach.",
+    "sparql_wrong": "SELECT DISTINCT ?uri WHERE  ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }",
+    "sparql_gold": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q164",
+    "question": "Give me a list of all bandleaders that play trumpet.",
+    "sparql_wrong": "SELECT DISTINCT ?uri WHERE  ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Bandleader> ; <http://dbpedia.org/ontology/instrument> <http://dbpedia.org/resource/Trumpet> }",
+    "sparql_gold": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Bandleader> ; <http://dbpedia.org/ontology/instrument> <http://dbpedia.org/resource/Trumpet> }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q173",
+    "question": "Give me all cities in New Jersey with more than 100000 inhabitants.",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE ?uri rdf:type dbo:City ; dbo:isPartOf res:New_Jersey ; dbo:populationTotal ?inhabitants FILTER ( ?inhabitants > 100000 ) }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City ; dbo:isPartOf res:New_Jersey ; dbo:populationTotal ?inhabitants FILTER ( ?inhabitants > 100000 ) }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q214",
+    "question": "Are tree frogs a type of amphibian?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE res:Hylidae dbo:class res:Amphibian }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Hylidae dbo:class res:Amphibian }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q215",
+    "question": "What is the location of the Houses of Parliament?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE res:Palace_of_Westminster dbo:location ?uri }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE { res:Palace_of_Westminster dbo:location ?uri }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q229",
+    "question": "Who is 8th president of US?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?name WHERE dbr:8th_President_of_the_United_States dbo:wikiPageRedirects ?link . ?link dbp:name ?name }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?name WHERE { dbr:8th_President_of_the_United_States dbo:wikiPageRedirects ?link . ?link dbp:name ?name }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q230",
+    "question": "how much is the total population of european union?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?europop WHERE dbr:European_Union dbo:populationTotal ?europop }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?europop WHERE { dbr:European_Union dbo:populationTotal ?europop }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q234",
+    "question": "What is the population of Cairo?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?pop WHERE dbr:Cairo dbo:populationTotal ?pop }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?pop WHERE { dbr:Cairo dbo:populationTotal ?pop }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q235",
+    "question": "Is Frank Herbert still alive?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { OPTIONAL { res:Frank_Herbert dbo:deathDate ?date  FILTER ( ! bound(?date) ) }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { OPTIONAL { res:Frank_Herbert dbo:deathDate ?date } FILTER ( ! bound(?date) ) }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q244",
+    "question": "How often did Jane Fonda marry?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c WHERE { res:Jane_Fonda dbo:spouse ?uri }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Jane_Fonda dbo:spouse ?uri }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing parentheses"
+    ]
+  },
+  {
+    "id": "q248",
+    "question": "Which university did Angela Merkel attend?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?university WHERE res:Angela_Merkel dbo:almaMater ?university }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?university WHERE { res:Angela_Merkel dbo:almaMater ?university }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q278",
+    "question": "how big is the total area of North Rhine- Westphalia?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?tarea WHERE dbr:North_Rhine-Westphalia dbo:areaTotal ?tarea }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?tarea WHERE { dbr:North_Rhine-Westphalia dbo:areaTotal ?tarea }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q287",
+    "question": "How tall is Claudia Schiffer?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE res:Claudia_Schiffer dbo:height ?height }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE { res:Claudia_Schiffer dbo:height ?height }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q288",
+    "question": "how much is the population densty rank of germany?",
+    "sparql_wrong": "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?rank WHERE dbr:Germany dbp:populationDensityRank ?rank }",
+    "sparql_gold": "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?rank WHERE { dbr:Germany dbp:populationDensityRank ?rank }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q290",
+    "question": "List all games by GMT.",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE ?uri dbo:publisher res:GMT_Games }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q304",
+    "question": "How high is the Yokohama Marine Tower?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE res:Yokohama_Marine_Tower dbo:height ?num }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Yokohama_Marine_Tower dbo:height ?num }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q312",
+    "question": "What country is Sitecore from?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Sitecore dbo:foundationPlace ?uri }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Sitecore dbo:foundationPlace ?uri }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q330",
+    "question": "Who composed the music for Harold and Maude?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Harold_and_Maude dbo:musicComposer ?uri }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Harold_and_Maude dbo:musicComposer ?uri }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q347",
+    "question": "Show me all books in Asimov's Foundation series.",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE ?uri dbo:series res:Foundation_series }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:Foundation_series }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q361",
+    "question": "Did Socrates influence Aristotle?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE res:Aristotle dbo:influencedBy res:Socrates }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Aristotle dbo:influencedBy res:Socrates }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q366",
+    "question": "In which city does the Chile Route 68 end?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Chile_Route_68 dbo:routeEnd ?uri }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Chile_Route_68 dbo:routeEnd ?uri }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q378",
+    "question": "Which books by Kerouac were published by Viking Press?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE ?uri rdf:type dbo:Book ; dbo:publisher res:Viking_Press ; dbo:author res:Jack_Kerouac }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:publisher res:Viking_Press ; dbo:author res:Jack_Kerouac }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q390",
+    "question": "In which films did Julia Roberts as well as Richard Gere play?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Julia_Roberts ; dbo:starring res:Richard_Gere",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Julia_Roberts ; dbo:starring res:Richard_Gere }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q396",
+    "question": "Who is the founder of Penguin Books?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE res:Penguin_Books dbo:founder ?uri }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Penguin_Books dbo:founder ?uri }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q397",
+    "question": "Who wrote the Game of Thrones theme?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE res:Game_of_Thrones dbo:composer ?uri }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Game_of_Thrones dbo:composer ?uri }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  },
+  {
+    "id": "q404",
+    "question": "In which city are the headquarters of the United Nations?",
+    "sparql_wrong": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE res:Headquarters_of_the_United_Nations dbo:location ?uri . ?uri rdf:type dbo:City }",
+    "sparql_gold": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Headquarters_of_the_United_Nations dbo:location ?uri . ?uri rdf:type dbo:City }",
+    "error_types": [
+      "syntax"
+    ],
+    "sub_error_types": [
+      "missing or mismatched braces"
+    ]
+  }
+]

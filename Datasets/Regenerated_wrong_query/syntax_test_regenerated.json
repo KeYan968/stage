@@ -1,0 +1,65 @@
+[
+  {
+    "id":"q29",
+    "question":"Which countries in the European Union adopted the Euro?",
+    "sparql_wrong":"SELECT DISTINCT ?uri WHERE  ?uri a <http:\/\/dbpedia.org\/ontology\/Country> { ?uri <http:\/\/dbpedia.org\/ontology\/currency> <http:\/\/dbpedia.org\/resource\/Euro> } UNION { ?uri <http:\/\/dbpedia.org\/property\/currencyCode> \"EUR\"@en } }",
+    "sparql_gold":"SELECT DISTINCT ?uri WHERE { ?uri a <http:\/\/dbpedia.org\/ontology\/Country> { ?uri <http:\/\/dbpedia.org\/ontology\/currency> <http:\/\/dbpedia.org\/resource\/Euro> } UNION { ?uri <http:\/\/dbpedia.org\/property\/currencyCode> \"EUR\"@en } }",
+    "error_types":[
+      "syntax"
+    ]
+  },
+  {
+    "id":"q151",
+    "question":"Give me all B-sides of the Ramones.",
+    "sparql_wrong":"PREFIX dbo: <http:\/\/dbpedia.org\/ontology\/> PREFIX res: <http:\/\/dbpedia.org\/resource\/> PREFIX dbp: <http:\/\/dbpedia.org\/property\/> SELECT DISTINCT ?string WHERE ?x dbo:musicalArtist res:Ramones ; dbo:bSide ?string }",
+    "sparql_gold":"PREFIX dbo: <http:\/\/dbpedia.org\/ontology\/> PREFIX res: <http:\/\/dbpedia.org\/resource\/> PREFIX dbp: <http:\/\/dbpedia.org\/property\/> SELECT DISTINCT ?string WHERE { ?x dbo:musicalArtist res:Ramones ; dbo:bSide ?string }",
+    "error_types":[
+      "syntax"
+    ]
+  },
+  {
+    "id":"q206",
+    "question":"What was the name of the famous battle in 1836 in San Antonio?",
+    "sparql_wrong":"PREFIX dbo: <http:\/\/dbpedia.org\/ontology\/> PREFIX dbr: <http:\/\/dbpedia.org\/resource\/> SELECT ?uri WHERE { ?uri a dbo:MilitaryConflict ; dbo:place dbr:San_Antonio ; dbo:date ?date FILTER ( ?date > \"1835-12-31T00:00:00Z\"^^xsd:dateTime ) FILTER ( ?date <= \"1836-12-31T00:00:00Z\"^^xsd:dateTime )",
+    "sparql_gold":"PREFIX dbo: <http:\/\/dbpedia.org\/ontology\/> PREFIX dbr: <http:\/\/dbpedia.org\/resource\/> SELECT ?uri WHERE { ?uri a dbo:MilitaryConflict ; dbo:place dbr:San_Antonio ; dbo:date ?date FILTER ( ?date > \"1835-12-31T00:00:00Z\"^^xsd:dateTime ) FILTER ( ?date <= \"1836-12-31T00:00:00Z\"^^xsd:dateTime ) }",
+    "error_types":[
+      "syntax"
+    ]
+  },
+  {
+    "id":"q116",
+    "question":"Who was called Rodzilla?",
+    "sparql_wrong":"SELECT DISTINCT ?uri WHERE  ?uri <http:\/\/xmlns.com\/foaf\/0.1\/nick> \"Rodzilla\"@en }",
+    "sparql_gold":"SELECT DISTINCT ?uri WHERE { ?uri <http:\/\/xmlns.com\/foaf\/0.1\/nick> \"Rodzilla\"@en }",
+    "error_types":[
+      "syntax"
+    ]
+  },
+  {
+    "id":"q177",
+    "question":"Which bridges are of the same type as the Manhattan Bridge?",
+    "sparql_wrong":"PREFIX dbo: <http:\/\/dbpedia.org\/ontology\/> PREFIX rdf: <http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#> PREFIX dbr: <http:\/\/dbpedia.org\/resource\/> SELECT DISTINCT ?bridge WHERE dbr:Manhattan_Bridge dbo:type ?type . ?bridge dbo:type ?type ; rdf:type dbo:Bridge }",
+    "sparql_gold":"PREFIX dbo: <http:\/\/dbpedia.org\/ontology\/> PREFIX rdf: <http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#> PREFIX dbr: <http:\/\/dbpedia.org\/resource\/> SELECT DISTINCT ?bridge WHERE { dbr:Manhattan_Bridge dbo:type ?type . ?bridge dbo:type ?type ; rdf:type dbo:Bridge }",
+    "error_types":[
+      "syntax"
+    ]
+  },
+  {
+    "id":"q43",
+    "question":"Give me the websites of companies with more than 500000 employees.",
+    "sparql_wrong":"PREFIX foaf: <http:\/\/xmlns.com\/foaf\/0.1\/> PREFIX dbo: <http:\/\/dbpedia.org\/ontology\/> PREFIX rdf: <http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#> PREFIX rdfs: <http:\/\/www.w3.org\/2000\/01\/rdf-schema#> SELECT distinct ?web WHERE { ?sub dbo:numberOfEmployees ?obj . ?sub foaf:homepage ?web FILTER( xsd:integer(?obj) > 500000 ) .",
+    "sparql_gold":"PREFIX foaf: <http:\/\/xmlns.com\/foaf\/0.1\/> PREFIX dbo: <http:\/\/dbpedia.org\/ontology\/> PREFIX rdf: <http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#> PREFIX rdfs: <http:\/\/www.w3.org\/2000\/01\/rdf-schema#> SELECT distinct ?web WHERE { ?sub dbo:numberOfEmployees ?obj . ?sub foaf:homepage ?web FILTER( xsd:integer(?obj) > 500000 ) . }",
+    "error_types":[
+      "syntax"
+    ]
+  },
+  {
+    "id":"q179",
+    "question":"What were the names of the three ships by Columbus?",
+    "sparql_wrong":"PREFIX dbo: <http:\/\/dbpedia.org\/ontology\/> PREFIX dct: <http:\/\/purl.org\/dc\/terms\/> PREFIX dbc: <http:\/\/dbpedia.org\/resource\/Category:> PREFIX rdf: <http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#> SELECT ?uri WHERE ?uri rdf:type dbo:Ship ; dct:subject dbc:Christopher_Columbus ; dct:subject dbc:Exploration_ships }",
+    "sparql_gold":"PREFIX dbo: <http:\/\/dbpedia.org\/ontology\/> PREFIX dct: <http:\/\/purl.org\/dc\/terms\/> PREFIX dbc: <http:\/\/dbpedia.org\/resource\/Category:> PREFIX rdf: <http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri rdf:type dbo:Ship ; dct:subject dbc:Christopher_Columbus ; dct:subject dbc:Exploration_ships }",
+    "error_types":[
+      "syntax"
+    ]
+  }
+]
