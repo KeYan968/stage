@@ -51,14 +51,14 @@ output_model_name = RESULTS_DIR + "llama_kgqa.model"
 fine_tuned_model_path = RESULTS_DIR + "adapter.llama.model"
 
 
-# Load environment variables from the .env file
-load_dotenv()
+# # Load environment variables from the .env file
+# load_dotenv()
 
-# Access the token
-hf_token = os.getenv("HUGGINGFACE_TOKEN")
-wb_token = os.getenv("WANDB_TOKEN")
+# # Access the token
+# hf_token = os.getenv("HUGGINGFACE_TOKEN")
+# wb_token = os.getenv("WANDB_TOKEN")
 
-# Login into HF and WandB
+# # Login into HF and WandB
 # login(token = hf_token)
 # wandb.login(key=wb_token)
 
@@ -159,16 +159,16 @@ training_arguments = TrainingArguments(
     gradient_accumulation_steps=2,
     optim="paged_adamw_32bit",
     num_train_epochs=epochs_val,
-    # evaluation_strategy="steps",#
-    # eval_steps=0.2,#
+    evaluation_strategy="steps",#co;;ent if error
+    eval_steps=0.2,#co;;ent if error
     logging_steps=1,
     warmup_steps=10,
     logging_strategy="steps",
     learning_rate=2e-4,
     fp16=False,
     bf16=False,
-    group_by_length=True,
-    report_to="wandb"
+    group_by_length=True#,
+    # report_to="wandb"
 )
 
 trainer = SFTTrainer(
@@ -185,9 +185,9 @@ trainer = SFTTrainer(
 
 trainer.train()
 
-# # Model evaluation
+# Model evaluation
 # wandb.finish()
-# model.config.use_cache = True
+model.config.use_cache = True
 
 # Save trained model
 trainer.model.save_pretrained(fine_tuned_model_path)
