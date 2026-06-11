@@ -1,7 +1,7 @@
 from huggingface_hub import snapshot_download
 import os
 
-model_dir = os.path.expanduser("~/models/Llama-3.2-3B-Instruct")
+model_dir = os.path.expanduser("~/models/Llama-3-8B-Instruct")
 
 snapshot_download(
     repo_id="meta-llama/Meta-Llama-3-8B-Instruct",

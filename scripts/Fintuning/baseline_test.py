@@ -1,9 +1,9 @@
 """
-Fine-tuned model inference — LLaMA 3.2-3B-Instruct after QLoRA fine-tuning.
+Baseline inference — original LLaMA 3.2-3B-Instruct, no fine-tuning.
 Output in QALD format for GERBIL evaluation.
 
 Usage:
-    python3 main_sparql_test.py
+    python3 baseline_test.py
 """
 
 import re, torch, json, time, os
@@ -11,9 +11,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from SPARQLWrapper import SPARQLWrapper, JSON, SPARQLExceptions
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
-MODEL_PATH  = "/home/kyan/stage/scripts/Fintuning/Llama-SPARQL-Correction_3.2_3B/merged_model"
+MODEL_PATH  = "/home/kyan/models/Llama-3.2-3B-Instruct"
 TEST_FILE   = "/home/kyan/stage/Datasets/Generated_wrong_sparql_datasets/test_set_updated.json"
-OUTPUT_FILE = "results/finetuned_gerbil.json"
+OUTPUT_FILE = "results/baseline_gerbil.json"
 ENDPOINT    = "https://dbpedia.org/sparql"
 TIMEOUT     = 15
 
