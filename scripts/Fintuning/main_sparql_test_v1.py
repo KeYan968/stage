@@ -3,7 +3,7 @@ Fine-tuned model inference — LLaMA 3.2-3B-Instruct after QLoRA fine-tuning.
 Output in QALD format for GERBIL evaluation.
 
 Usage:
-    python3 main_sparql_test.py
+    python3 main_sparql_test_v1.py
 """
 
 import re, torch, json, time, os

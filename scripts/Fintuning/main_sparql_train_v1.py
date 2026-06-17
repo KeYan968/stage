@@ -5,7 +5,7 @@ Task  : NL question + wrong SPARQL  →  corrected SPARQL
 Fields: question, sparql_wrong, sparql_gold
 
 Usage:
-    python3 main_sparql_fix.py
+    python3 main_sparql_train_v1.pys
 """
 
 import os, torch

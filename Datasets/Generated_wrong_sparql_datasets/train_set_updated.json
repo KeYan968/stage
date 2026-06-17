@@ -2816,7 +2816,7 @@
       "structural"
     ],
     "sub_error_types": [
-      "missing or mismatched braces"
+      "triple flip (subject/object inversion)"
     ]
   },
   {
@@ -4004,7 +4004,7 @@
       "structural"
     ],
     "sub_error_types": [
-      "missing or mismatched braces"
+      "triple flip (subject/object inversion)"
     ]
   },
   {
@@ -4796,7 +4796,7 @@
       "structural"
     ],
     "sub_error_types": [
-      "missing or mismatched braces"
+      "triple flip (subject/object inversion)"
     ]
   },
   {

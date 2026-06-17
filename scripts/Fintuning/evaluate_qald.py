@@ -30,8 +30,20 @@ GOLD_FILE   = "/home/kyan/stage/Datasets/Generated_wrong_sparql_datasets/test_se
 #OUTPUT_FILE = "results/finetuned_evaluation.json"
 
 # For baseline:
-PRED_FILE   = "results/baseline_gerbil.json"
-OUTPUT_FILE = "results/baseline_evaluation.json"
+#PRED_FILE   = "results/baseline_gerbil.json"
+#OUTPUT_FILE = "results/baseline_evaluation.json"
+
+# For v2 with error types model
+# PRED_FILE   = "/home/kyan/stage/Datasets/v2_results/finetuned_v2_errortype_gerbil.json"
+# OUTPUT_FILE = "/home/kyan/stage/Datasets/v2_results/finetuned_v2_errortype_evaluation.json"
+
+# For v2 with fewshot
+PRED_FILE   = "/home/kyan/stage/Datasets/Experiment_results/v2_fewshot_results/finetuned_v2_fewshot_gerbil.json"
+OUTPUT_FILE = "/home/kyan/stage/Datasets/Experiment_results/v2_fewshot_results/finetuned_v2_fewshot_evaluation.json"
+
+# For v1 with fewshot
+#PRED_FILE   = "/home/kyan/stage/Datasets/Experiment_results/v1_fewshot_results/finetuned_v1_fewshot_gerbil.json"
+#OUTPUT_FILE = "/home/kyan/stage/Datasets/Experiment_results/v1_fewshot_results/finetuned_v1_fewshot_evaluation.json"
 
 ENDPOINT = "https://dbpedia.org/sparql"
 TIMEOUT  = 15

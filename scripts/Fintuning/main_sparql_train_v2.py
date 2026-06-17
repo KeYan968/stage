@@ -19,7 +19,7 @@ BASE_MODEL  = "/home/kyan/models/Llama-3.2-3B-Instruct"
 TRAIN_FILE  = "/home/kyan/stage/Datasets/Generated_wrong_sparql_datasets/train_set_updated.json"
 
 MODEL_NAME   = "Llama-SPARQL-Correction-V2-ErrorType"
-RESULTS_DIR  = MODEL_NAME + "/"
+RESULTS_DIR  = "/infmodels/kyan/" + MODEL_NAME + "/"
 ADAPTER_PATH = RESULTS_DIR + "adapter"
 OUTPUT_PATH  = RESULTS_DIR + "merged_model"
 

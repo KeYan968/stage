@@ -12083,7 +12083,7 @@ Output format:
   ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?book WHERE {{ {{ ?book dbo:author dbr:Dan_Brown . ?book dbp:releaseDate ?date }} UNION {{ ?book dbo:author dbr:Dan_Brown . ?book dbo:publicationDate ?date}} }} ORDER BY DESC(xsd:date(?date)) LIMIT 1"",
   ""error_types"": [""structural""]
 }
-",PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?book WHERE {{ {{ dbr:Dan_Brown dbo:author ?book . ?book dbp:releaseDate ?date }} UNION {{ dbr:Dan_Brown dbo:author ?book . ?book dbo:publicationDate ?date}} }} ORDER BY DESC(xsd:date(?date)) LIMIT 1,['structural'],['missing or mismatched braces'],"{
+",PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?book WHERE {{ {{ dbr:Dan_Brown dbo:author ?book . ?book dbp:releaseDate ?date }} UNION {{ dbr:Dan_Brown dbo:author ?book . ?book dbo:publicationDate ?date}} }} ORDER BY DESC(xsd:date(?date)) LIMIT 1,['structural'],['triple flip (subject/object inversion)'],"{
   ""id"": ""q236"",
   ""question"": ""What is the last work of Dan Brown?"",
   ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?book WHERE {{ {{ dbr:Dan_Brown dbo:author ?book . ?book dbp:releaseDate ?date }} UNION {{ dbr:Dan_Brown dbo:author ?book . ?book dbo:publicationDate ?date}} }} ORDER BY DESC(xsd:date(?date)) LIMIT 1"",
@@ -17167,7 +17167,7 @@ Output format:
   ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE {{ ?uri dbo:influenced res:Vincent_van_Gogh }}"",
   ""error_types"": [""structural""]
 }
-",PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE {{ res:Vincent_van_Gogh dbo:influenced ?uri }},['structural'],['missing or mismatched braces'],"{
+",PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE {{ res:Vincent_van_Gogh dbo:influenced ?uri }},['structural'],['triple flip (subject/object inversion)'],"{
   ""id"": ""q339"",
   ""question"": ""Who was Vincent van Gogh inspired by?"",
   ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE {{ res:Vincent_van_Gogh dbo:influenced ?uri }}"",
@@ -20551,7 +20551,7 @@ Output format:
   ""sparql_gold"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE {{ res:Tom_Hanks dbo:spouse res:Rita_Wilson }}"",
   ""error_types"": [""structural""]
 }
-",PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE {{ res:Rita_Wilson dbo:spouse res:Tom_Hanks }},['structural'],['missing or mismatched braces'],"{
+",PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE {{ res:Rita_Wilson dbo:spouse res:Tom_Hanks }},['structural'],['triple flip (subject/object inversion)'],"{
   ""id"": ""q405"",
   ""question"": ""Is Rita Wilson the wife of Tom Hanks?"",
   ""sparql_wrong"": ""PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE {{ res:Rita_Wilson dbo:spouse res:Tom_Hanks }}"",
