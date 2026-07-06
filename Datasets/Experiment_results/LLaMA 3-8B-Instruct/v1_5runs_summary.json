@@ -1,0 +1,230 @@
+{
+    "config": "v1",
+    "per_run": {
+        "run_1": {
+            "total": 150,
+            "micro_f1": 0.5208,
+            "micro_precision": 0.9889,
+            "micro_recall": 0.3534,
+            "macro_f1": 0.7893,
+            "macro_precision": 0.7883,
+            "macro_recall": 0.7933,
+            "macro_f1_qald": 0.7893,
+            "exact_match": 0.0,
+            "execution_success_rate": 0.9667,
+            "answer_match": 0.7867,
+            "answer_f1_qald": 0.7893,
+            "bleu1": 0.791,
+            "property_em": 0.9133
+        },
+        "run_2": {
+            "total": 150,
+            "micro_f1": 0.5201,
+            "micro_precision": 0.9944,
+            "micro_recall": 0.3521,
+            "macro_f1": 0.78,
+            "macro_precision": 0.78,
+            "macro_recall": 0.78,
+            "macro_f1_qald": 0.78,
+            "exact_match": 0.0,
+            "execution_success_rate": 0.9667,
+            "answer_match": 0.78,
+            "answer_f1_qald": 0.78,
+            "bleu1": 0.7894,
+            "property_em": 0.9
+        },
+        "run_3": {
+            "total": 150,
+            "micro_f1": 0.5168,
+            "micro_precision": 0.9888,
+            "micro_recall": 0.3498,
+            "macro_f1": 0.7827,
+            "macro_precision": 0.7817,
+            "macro_recall": 0.7867,
+            "macro_f1_qald": 0.7827,
+            "exact_match": 0.0,
+            "execution_success_rate": 0.9667,
+            "answer_match": 0.78,
+            "answer_f1_qald": 0.7827,
+            "bleu1": 0.7893,
+            "property_em": 0.9
+        },
+        "run_4": {
+            "total": 150,
+            "micro_f1": 0.9309,
+            "micro_precision": 0.9973,
+            "micro_recall": 0.8727,
+            "macro_f1": 0.78,
+            "macro_precision": 0.78,
+            "macro_recall": 0.78,
+            "macro_f1_qald": 0.78,
+            "exact_match": 0.0,
+            "execution_success_rate": 0.9667,
+            "answer_match": 0.78,
+            "answer_f1_qald": 0.78,
+            "bleu1": 0.79,
+            "property_em": 0.8933
+        },
+        "run_5": {
+            "total": 150,
+            "micro_f1": 0.4945,
+            "micro_precision": 0.993,
+            "micro_recall": 0.3292,
+            "macro_f1": 0.782,
+            "macro_precision": 0.7867,
+            "macro_recall": 0.7812,
+            "macro_f1_qald": 0.782,
+            "exact_match": 0.0,
+            "execution_success_rate": 0.96,
+            "answer_match": 0.78,
+            "answer_f1_qald": 0.782,
+            "bleu1": 0.7897,
+            "property_em": 0.8933
+        }
+    },
+    "mean_std": {
+        "micro_f1": {
+            "mean": 0.5966,
+            "std": 0.1674,
+            "values": [
+                0.5208,
+                0.5201,
+                0.5168,
+                0.9309,
+                0.4945
+            ]
+        },
+        "micro_precision": {
+            "mean": 0.9925,
+            "std": 0.0033,
+            "values": [
+                0.9889,
+                0.9944,
+                0.9888,
+                0.9973,
+                0.993
+            ]
+        },
+        "micro_recall": {
+            "mean": 0.4514,
+            "std": 0.2108,
+            "values": [
+                0.3534,
+                0.3521,
+                0.3498,
+                0.8727,
+                0.3292
+            ]
+        },
+        "macro_f1": {
+            "mean": 0.7828,
+            "std": 0.0034,
+            "values": [
+                0.7893,
+                0.78,
+                0.7827,
+                0.78,
+                0.782
+            ]
+        },
+        "macro_precision": {
+            "mean": 0.7833,
+            "std": 0.0035,
+            "values": [
+                0.7883,
+                0.78,
+                0.7817,
+                0.78,
+                0.7867
+            ]
+        },
+        "macro_recall": {
+            "mean": 0.7842,
+            "std": 0.0052,
+            "values": [
+                0.7933,
+                0.78,
+                0.7867,
+                0.78,
+                0.7812
+            ]
+        },
+        "macro_f1_qald": {
+            "mean": 0.7828,
+            "std": 0.0034,
+            "values": [
+                0.7893,
+                0.78,
+                0.7827,
+                0.78,
+                0.782
+            ]
+        },
+        "exact_match": {
+            "mean": 0.0,
+            "std": 0.0,
+            "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "execution_success_rate": {
+            "mean": 0.9654,
+            "std": 0.0027,
+            "values": [
+                0.9667,
+                0.9667,
+                0.9667,
+                0.9667,
+                0.96
+            ]
+        },
+        "answer_match": {
+            "mean": 0.7813,
+            "std": 0.0027,
+            "values": [
+                0.7867,
+                0.78,
+                0.78,
+                0.78,
+                0.78
+            ]
+        },
+        "answer_f1_qald": {
+            "mean": 0.7828,
+            "std": 0.0034,
+            "values": [
+                0.7893,
+                0.78,
+                0.7827,
+                0.78,
+                0.782
+            ]
+        },
+        "bleu1": {
+            "mean": 0.7899,
+            "std": 0.0006,
+            "values": [
+                0.791,
+                0.7894,
+                0.7893,
+                0.79,
+                0.7897
+            ]
+        },
+        "property_em": {
+            "mean": 0.9,
+            "std": 0.0073,
+            "values": [
+                0.9133,
+                0.9,
+                0.9,
+                0.8933,
+                0.8933
+            ]
+        }
+    }
+}

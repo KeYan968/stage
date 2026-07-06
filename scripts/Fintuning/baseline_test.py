@@ -2,6 +2,9 @@
 Baseline inference — original LLaMA 3.2-3B-Instruct, no fine-tuning.
 Output in QALD format for GERBIL evaluation.
 
+Baseline inference — original LLaMA 3-8B-Instruct, no fine-tuning.
+Output in QALD format for GERBIL evaluation.
+
 Usage:
     python3 baseline_test.py
 """
@@ -11,9 +14,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from SPARQLWrapper import SPARQLWrapper, JSON, SPARQLExceptions
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
-MODEL_PATH  = "/home/kyan/models/Llama-3.2-3B-Instruct"
+#MODEL_PATH  = "/home/kyan/models/Llama-3.2-3B-Instruct"
+MODEL_PATH  = "/home/kyan/models/Llama-3-8B-Instruct"
 TEST_FILE   = "/home/kyan/stage/Datasets/Generated_wrong_sparql_datasets/test_set_updated.json"
-OUTPUT_FILE = "results/baseline_gerbil.json"
+OUTPUT_FILE = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/Baseline_results_LLaMA 3-8B-Instruc/baseline_gerbil.json"
 ENDPOINT    = "https://dbpedia.org/sparql"
 TIMEOUT     = 15
 

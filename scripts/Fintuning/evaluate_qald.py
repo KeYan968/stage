@@ -38,12 +38,33 @@ GOLD_FILE   = "/home/kyan/stage/Datasets/Generated_wrong_sparql_datasets/test_se
 # OUTPUT_FILE = "/home/kyan/stage/Datasets/v2_results/finetuned_v2_errortype_evaluation.json"
 
 # For v2 with fewshot
-PRED_FILE   = "/home/kyan/stage/Datasets/Experiment_results/v2_fewshot_results/finetuned_v2_fewshot_gerbil.json"
-OUTPUT_FILE = "/home/kyan/stage/Datasets/Experiment_results/v2_fewshot_results/finetuned_v2_fewshot_evaluation.json"
+#PRED_FILE   = "/home/kyan/stage/Datasets/Experiment_results/v2_fewshot_results/finetuned_v2_fewshot_gerbil.json"
+#OUTPUT_FILE = "/home/kyan/stage/Datasets/Experiment_results/v2_fewshot_results/finetuned_v2_fewshot_evaluation.json"
 
 # For v1 with fewshot
 #PRED_FILE   = "/home/kyan/stage/Datasets/Experiment_results/v1_fewshot_results/finetuned_v1_fewshot_gerbil.json"
 #OUTPUT_FILE = "/home/kyan/stage/Datasets/Experiment_results/v1_fewshot_results/finetuned_v1_fewshot_evaluation.json"
+
+# For LLama 3 8b Model
+# For baseline:
+#PRED_FILE   = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/Baseline_results_LLaMA 3-8B-Instruct/baseline_gerbil.json"
+#OUTPUT_FILE = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/Baseline_results_LLaMA 3-8B-Instruct/baseline_evaluation.json"
+
+# For v1 without errortype
+#PRED_FILE   = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/v1_results_LLaMA 3-8B-Instruct/v1_results_LLaMA 3-8B-Instruct_gerbil.json"
+#OUTPUT_FILE = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/v1_results_LLaMA 3-8B-Instruct/v1_evaluation.json"
+
+# For v2 with error types model
+#PRED_FILE   = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/v2_results_LLaMA 3-8B-Instruct/v2_results_LLaMA 3-8B-Instruct_gerbil.json"
+#OUTPUT_FILE = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/v2_results_LLaMA 3-8B-Instruct/v2_errortype_evaluation.json"
+
+# For v2 with fewshot
+PRED_FILE   = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/v2_fewshot_results_LLaMA 3-8B-Instruct/v2_fewshot_results_LLaMA 3-8B-Instruct_gerbil.json"
+OUTPUT_FILE = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/v2_fewshot_results_LLaMA 3-8B-Instruct/v2_fewshot_evaluation.json"
+
+# For v1 with fewshot
+#PRED_FILE   = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/v1_fewshot_results_LLaMA 3-8B-Instruct/v1_fewshot_results_LLaMA 3-8B-Instruct_gerbil.json"
+#OUTPUT_FILE = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/v1_fewshot_results_LLaMA 3-8B-Instruct/v1_fewshot_evaluation.json"
 
 ENDPOINT = "https://dbpedia.org/sparql"
 TIMEOUT  = 15

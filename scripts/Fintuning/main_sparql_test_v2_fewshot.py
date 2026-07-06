@@ -1,7 +1,7 @@
 """
 Few-shot inference — Fine-tuned V2 (with error type).
 Selects one example per error type (syntax, semantic, structural)
-so the model sees a representative correction for each error category.
+So the model sees a representative correction for each error category.
 
 Usage:
     python3 main_sparql_test_v2_fewshot.py
@@ -12,10 +12,11 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
-MODEL_PATH   = "/infmodels/kyan/Llama-SPARQL-Correction-V2-ErrorType/merged_model"
+#MODEL_PATH   = "/infmodels/kyan/Llama-SPARQL-Correction-V2-ErrorType/merged_model"
+MODEL_PATH  = "/home/kyan/stage/scripts/Fintuning/Llama-SPARQL-Correction_Llama-3-8B-Instruct_v2/merged_model"
 TEST_FILE    = "/home/kyan/stage/Datasets/Generated_wrong_sparql_datasets/test_set_updated.json"
 TRAIN_FILE   = "/home/kyan/stage/Datasets/Generated_wrong_sparql_datasets/train_set_updated.json"
-OUTPUT_FILE  = "/home/kyan/stage/Datasets/Experiment_results/v2_fewshot_results/finetuned_v2_fewshot_gerbil.json"
+OUTPUT_FILE  = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/v2_fewshot_results_LLaMA 3-8B-Instruct/v2s_fewshot_results_LLaMA 3-8B-Instruct_gerbil.json"
 ENDPOINT     = "https://dbpedia.org/sparql"
 TIMEOUT      = 15
 N_SHOTS      = 3

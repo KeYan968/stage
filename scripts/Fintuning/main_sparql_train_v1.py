@@ -1,11 +1,11 @@
 """
-Fine-tune LLaMA 3.2-3B-Instruct for SPARQL query correction using QLoRA.
+Fine-tune LLaMA 3.2-3B-Instruct or LLaMA 3-8B-Instruct for SPARQL query correction using QLoRA.
 
-Task  : NL question + wrong SPARQL  →  corrected SPARQL
+Tasks : NL question + wrong SPARQL  →  corrected SPARQL
 Fields: question, sparql_wrong, sparql_gold
 
 Usage:
-    python3 main_sparql_train_v1.pys
+    python3 main_sparql_train_v1.py
 """
 
 import os, torch
@@ -15,10 +15,12 @@ from datasets import load_dataset
 from trl import SFTTrainer, SFTConfig
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
-BASE_MODEL  = "/home/kyan/models/Llama-3.2-3B-Instruct"
+#BASE_MODEL  = "/home/kyan/models/Llama-3.2-3B-Instruct"
+BASE_MODEL = "/home/kyan/models/Llama-3-8B-Instruct"
 TRAIN_FILE  = "/home/kyan/stage/Datasets/Generated_wrong_sparql_datasets/train_set_updated.json"
 
-MODEL_NAME   = "Llama-SPARQL-Correction"
+#MODEL_NAME   = "Llama-SPARQL-Correction"
+MODEL_NAME   = "Llama-SPARQL-Correction_Llama-3-8B-Instruct_v1"
 RESULTS_DIR  = MODEL_NAME + "/"
 ADAPTER_PATH = RESULTS_DIR + "adapter"
 OUTPUT_PATH  = RESULTS_DIR + "merged_model"

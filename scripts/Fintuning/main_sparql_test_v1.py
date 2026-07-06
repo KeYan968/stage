@@ -11,9 +11,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from SPARQLWrapper import SPARQLWrapper, JSON, SPARQLExceptions
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
-MODEL_PATH  = "/home/kyan/stage/scripts/Fintuning/Llama-SPARQL-Correction_3.2_3B/merged_model"
+#MODEL_PATH  = "/home/kyan/stage/scripts/Fintuning/Llama-SPARQL-Correction_3.2_3B/merged_model"
+MODEL_PATH  = "/home/kyan/stage/scripts/Fintuning/Llama-SPARQL-Correction_Llama-3-8B-Instruct_v1/merged_model"
 TEST_FILE   = "/home/kyan/stage/Datasets/Generated_wrong_sparql_datasets/test_set_updated.json"
-OUTPUT_FILE = "results/finetuned_gerbil.json"
+OUTPUT_FILE = "/home/kyan/stage/Datasets/Experiment_results/LLaMA 3-8B-Instruct/v1_results_LLaMA 3-8B-Instruct/v1_results_LLaMA 3-8B-Instruct_gerbil.json"
 ENDPOINT    = "https://dbpedia.org/sparql"
 TIMEOUT     = 15
 
